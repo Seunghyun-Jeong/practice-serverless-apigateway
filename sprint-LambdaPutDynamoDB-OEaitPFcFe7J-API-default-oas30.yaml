@@ -1,0 +1,63 @@
+openapi: "3.0.1"
+info:
+  title: "sprint-LambdaPutDynamoDB-OEaitPFcFe7J-API"
+  description: "Created by AWS Lambda"
+  version: "2022-06-21T08:01:48Z"
+servers:
+- url: "https://kojdwpida1.execute-api.ap-northeast-2.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "/default"
+paths:
+  /sprint-LambdaPutDynamoDB-OEaitPFcFe7J:
+    post:
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+      security:
+      - sprint: []
+      - api_key: []
+    options:
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Access-Control-Allow-Methods:
+              schema:
+                type: "string"
+            Access-Control-Allow-Headers:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+      security:
+      - sprint: []
+      - api_key: []
+components:
+  schemas:
+    Empty:
+      title: "Empty Schema"
+      type: "object"
+  securitySchemes:
+    api_key:
+      type: "apiKey"
+      name: "x-api-key"
+      in: "header"
+    sprint:
+      type: "apiKey"
+      name: "authorizationToken"
+      in: "header"
+      x-amazon-apigateway-authtype: "custom"
